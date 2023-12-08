@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMagnifyingGlass, faSpinner, faStar, faStarHalfAlt, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faSpinner, faStar, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-library.add(faMagnifyingGlass, faSpinner, faStar, faStarHalfAlt, faArrowLeft);
+library.add(faMagnifyingGlass, faSpinner, faStar, faArrowLeft);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

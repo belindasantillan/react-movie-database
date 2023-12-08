@@ -1,16 +1,18 @@
 import React from "react";
-import Example from "../../assets/Movie Background.png";
+import { Link } from "react-router-dom";
 
 
-const Movie = () => {
+const Movie = ({ movie }) => {
     return (
         <div className="movie">
-            <figure className="movie__img--wrapper">
-                <img src={Example} className="movie__img" alt="" />
-            </figure>
+            <Link to={`/movies/${movie.imdbID}`} className="movie__img--wrapper">
+                <img src={movie.Poster} className="movie__img" alt="" />
+            </Link>
             <div className="movie__content--wrapper">
-                <h3 className="movie__title">movie.Title</h3>
-                <h6 className="movie__year">Year Released: movie.Year</h6>
+                <Link to={`/movies/${movie.imdbID}`} >
+                <h3 className="movie__title">{movie.Title}</h3>
+                </Link>
+                <h6 className="movie__year">Year Released: {movie.Year}</h6>
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ function App() {
         <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/movies" exact element={<Movies />} />
-        <Route path="/movies/:" element={<MoviesInfo />} /> 
+        <Route path="/movies/:imdbID" element={<MoviesInfo />} /> 
         </Routes>
         <Footer />
       </div>
