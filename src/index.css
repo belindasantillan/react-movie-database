@@ -240,7 +240,6 @@ header {
 /* MOVIES PAGE */
 
 #movies__main {
-    width: 100vw;
     height: 100vh;
     position: relative;
 }
@@ -336,7 +335,7 @@ header {
 }
 
 .movie__info--wrapper {
-    margin-left: 10px;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -374,16 +373,17 @@ header {
 
 .movie__info--title {
     font-size: 32px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .movie__info--summary {
     line-height: 1.50;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .movie__sub-info {
     margin-bottom: 4px;
+    font-size: 12px;
 }
 
 .movie__sub-info:last-child{
@@ -399,8 +399,7 @@ header {
 }
 
 .info__skeleton--wrapper {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .info__skeleton--img {
@@ -410,13 +409,13 @@ header {
 
 .info__skeleton--title {
     margin-bottom: 12px;
-    width: 350px;
+    width: 450px;
     height: 32px;
 }
 
 .info__skeleton--para{
     margin-bottom: 12px;
-    width: 300px;
+    width: 450px;
     height: 64px;
 }
 
@@ -498,6 +497,23 @@ footer {
     .movies__search {
         padding: 6px 30px 6px 22px;
     }
+
+    .movie__info--summary {
+        font-size: 14px;
+    }
+
+    .movie__info--title {
+        font-size: 28px;
+    }
+
+    .info__skeleton--title {
+        width: 310px;
+    }
+
+    .info__skeleton--para {
+        width: 310px;
+    }
+
 }
 
 /* LARGE SMARTPHONES, SMALL PHONES */
@@ -511,7 +527,7 @@ footer {
         display: none;
     }
 
-    .movie__info--wrapper {
+    .movie__content--wrapper {
         margin: 0;
     }
    
@@ -519,8 +535,34 @@ footer {
         margin-bottom: 8px;
     }
 
+    .info__skeleton--img {
+        width: 175px;
+        height: 250px;
+    }
+
     .skeleton__year {
         display: none;
+    }
+
+    .info__skeleton--title {
+        width: 200px;
+    }
+
+    .info__skeleton--para {
+        width: 200px;
+    }
+
+    .movie__info--title {
+        font-size: 24px;
+    }
+
+    .movie__info--summary {
+        line-height: 1.25;
+        margin-bottom: 10px;
+    }
+
+    .movie__sub-info {
+        font-size: 11px;
     }
 
 }
@@ -559,10 +601,12 @@ footer {
 
     .movies__header {
         margin-bottom: 0;
+        margin-top: 8px;
     }
 
-    .movies__search-results {
-        margin-top: 16px 0 0 16px;
+    .movies__link {
+        font-size: 16px;
+        margin-bottom: 8px;
     }
 
     .movies__list {
@@ -571,6 +615,23 @@ footer {
 
     .movies__container {
         padding: 12px 20px;
+    }
+
+    .movie__info {
+        padding: 20px;
+    }
+
+    .movie__info--img {
+        width: 150px;
+        height: 225px;
+    }
+
+    .info__skeleton--title {
+        width: 160px;
+    }
+
+    .info__skeleton--para {
+        width: 160px;
     }
 }
 
@@ -610,6 +671,27 @@ footer {
         width: calc(100% / 2);
     }
 
+    .movie__info--img {
+        width: 125px;
+        height: 200px;
+    }
+
+    .movie__info--wrapper {
+        margin-left: 12px;
+    }
+
+    .movie__info {
+        padding: 12px;
+    }
+
+    .movie__info--title {
+        font-size: 18px;
+    }
+
+    .movie__sub-info {
+        margin-bottom: 2px;
+    }
+
     .movie:nth-last-child(-n+2) {
         display: none;
     }
@@ -622,6 +704,35 @@ footer {
     .movies__label {
         text-align: center;
         margin-bottom: 8px;
+    }
+
+    .movies__search-results {
+        font-size: 18px;
+        margin: 14px 0 0 14px;
+
+    }
+
+    .info__skeleton--img {
+        width: 125px;
+        height: 175px;
+    }
+
+    .info__skeleton--title {
+        margin-bottom: 6px;
+        width: 110px;
+        height: 20px;
+    }
+
+    .info__skeleton--para {
+        margin-bottom: 6px;
+        width: 110px;
+        height: 50px;
+    }
+
+    .info__skeleton {
+        margin-bottom: 4px;
+        width: 75px;
+        height: 8px;
     }
 
 }
