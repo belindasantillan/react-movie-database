@@ -12,7 +12,7 @@ const Nav = () => {
             </Link>
             <ul className="nav__link--list">
                 <li className="nav__link"><Link to="/" className="nav__link--anchor nav__link--underline">Home</Link></li>
-                <li className="nav__link"><Link to="/movies" className="nav__link--anchor nav__link--primary">Movies</Link></li>
+                <li className="nav__link"><Link to={`/movies/spy`} className="nav__link--anchor nav__link--primary">Movies</Link></li>
             </ul>
         </nav>
     );

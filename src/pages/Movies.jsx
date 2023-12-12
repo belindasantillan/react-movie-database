@@ -3,12 +3,19 @@ import React, { useCallback, useEffect, useState } from "react";
 import Movie from "../components/ui/Movie";
 import Results from "../assets/Results IMG.png";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Movies = () => {
-    let id = "fast";
+    const { keySearch } = useParams();
     const [movies, setMovies] = useState([]);
-    const [searchKeyword, setSearchKeyword] = useState(id);
+    const [searchKeyword, setSearchKeyword] = useState(keySearch);
     const [loading, setLoading] = useState(true);
+
+    // function navigateOnEnterIfKeyword(event) {
+    //     if (searchKeyword) {
+    //         event.key === "Enter" && fetchMovie(searchKeyword);
+    //     }
+    // }
 
     function onSearch() {
         fetchMovie(searchKeyword);
@@ -34,7 +41,7 @@ const Movies = () => {
 
     async function fetchMovie(keyword) {
         setLoading(true);
-        const { data } = await axios.get(`https://www.omdbapi.com/?apikey=3846bb22&s=${keyword || id}`);
+        const { data } = await axios.get(`https://www.omdbapi.com/?apikey=3846bb22&s=${keyword || keySearch}`);
         setMovies(data.Search);
         setLoading(false);
     };
@@ -50,15 +57,15 @@ const Movies = () => {
                 <div className="movies__header">
                 <label className="movies__label">Explore Movies</label>
                 <div>
-                    <input className="movies__search search" type="text" value={searchKeyword} placeholder="Search by Keyword" onChange={(event) => setSearchKeyword(event.target.value)} onKeyUp={(event) => event.key === "Enter" && onSearch()} />
-                    <button className="movies__search--btn"  onClick={() => onSearch()} ><FontAwesomeIcon icon="fa-solid fa-magnifying-glass"/></button>
+                    <input className="movies__search search" type="text" value={searchKeyword} placeholder="Search by Keyword" onChange={(event) => setSearchKeyword(event.target.value)} onKeyUp={(event) => event.key === "Enter" && onSearch() } />
+                    <button className="movies__search--btn" disabled={!searchKeyword} onClick={() => onSearch()} ><FontAwesomeIcon icon="fa-solid fa-magnifying-glass"/></button>
                 </div>
                 </div>
                 <div className="movies__section--wrapper">
                 <h2 className="movies__search-results">Search Results: </h2>
                     <div className="movies__list">
                         {loading ? (new Array(6).fill(0).map((_, index) => (skeletonLoading(index)))) : (movies? movies.map((movie) => (
-                            <Movie movie={movie} key={movie.imdbID}/>
+                            <Movie movie={movie} key={movie.imdbID} />
                         )).slice(0,6) : noResultsBanner()) }
                     </div>
                 </div>

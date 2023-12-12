@@ -1,13 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import noImage from "../../assets/No Image.png";
 
 
 const MovieInfo = ({ movieInfo}) => {
 
+    console.log(movieInfo.Ratings)
+
     return (
         <div className="movie__info">
             <figure className="movie__img--wrapper">
-                <img src={movieInfo.Poster} className="movie__info--img" alt="" />
+                {movieInfo.Poster === "N/A" ? (<img src={noImage} className="movie__info--img" alt="" />) : (<img src={movieInfo.Poster} className="movie__info--img" alt="" />)}
             </figure>
             <div className="movie__info--wrapper">
                 <h3 className="movie__info--title">{movieInfo.Title}</h3>
@@ -21,6 +24,7 @@ const MovieInfo = ({ movieInfo}) => {
                 </div>
                 <div>
                     <FontAwesomeIcon icon="star" className="movie__sub-info--rating" />
+                    {movieInfo.Ratings.length === 0 ? ("N/A") : (movieInfo.Ratings[0].Value)}
                 </div>
             </div>
         </div>
