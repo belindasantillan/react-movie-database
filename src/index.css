@@ -262,7 +262,6 @@ header {
 }
 
 .movies__header {
-    height: 70px;
     margin-bottom: 20px;
     display: flex;
 } 
@@ -359,6 +358,7 @@ header {
     color: #fff;
     margin-bottom: 14px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .movie__info {
@@ -600,7 +600,6 @@ footer {
     }
 
     .movies__header {
-        margin-bottom: 0;
         margin-top: 8px;
     }
 
