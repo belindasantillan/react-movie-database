@@ -35,7 +35,7 @@ const MovieInfo = ({ movieInfo }) => {
         </div>
         <div>
           <FontAwesomeIcon icon="star" className="movie__sub-info--rating" />
-          {movieInfo.Ratings.length === 0 ? "N/A" : movieInfo.Ratings[0].Value}
+          {movieInfo.Ratings[0]?.Value || "N/A"}
         </div>
       </div>
     </div>
